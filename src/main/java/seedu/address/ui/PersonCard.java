@@ -58,7 +58,8 @@ public class PersonCard extends UiPart<Region> {
         date.setText("Visit date: " + person.getDate().value);
         address.setText("Address: " + person.getAddress().value);
         // Add symptoms and treatments here
-        remark.setText("Remark: " + person.getRemark().value);
+        String remarkStr = person.getRemark().value;
+        remark.setText(remarkStr.isEmpty() ? "" : "Remark: " + remarkStr);
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
