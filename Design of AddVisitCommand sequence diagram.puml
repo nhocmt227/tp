@@ -1,0 +1,20 @@
+@startuml
+actor Caller
+participant ModelManager
+participant MedLogger
+participant HashMap
+
+Caller -> ModelManager : addVisit(visit)
+ModelManager -> MedLogger : addVisit(visit)
+MedLogger -> HashMap : containsKey(visit.person.NRIC)
+HashMap --> MedLogger : true/false
+
+alt NRIC exists in HashMap
+    MedLogger -> HashMap : get(visit.person.NRIC)
+    HashMap --> MedLogger : person
+    MedLogger --> ModelManager : add success
+else NRIC not found
+    MedLogger -> MedLogger : throw CommandException
+end
+
+@enduml

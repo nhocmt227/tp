@@ -1,0 +1,22 @@
+@startuml
+
+actor User
+participant "MainWindow" as MW
+participant "LogicManager" as Logic
+participant "ListVisitsCommandParser" as Parser
+participant "ListVisitsCommand" as Command
+participant "ModelManager" as Model
+
+User -> MW : enter "listvisits l/3"
+MW -> Logic : execute("listvisits l/3")
+Logic -> Parser : parse("listvisits l/3")
+Parser -> Parser : tokenize args
+Parser -> Command : new ListVisitsCommand(limit=3)
+Parser -> Logic : return ListVisitsCommand
+Logic -> Command : execute(model)
+Command -> Model : updateSubFilteredVisitList(3)
+Command -> Logic : return CommandResult
+Logic -> MW : display "Listed 3 visits"
+
+@enduml
+

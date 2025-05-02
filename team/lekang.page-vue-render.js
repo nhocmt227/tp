@@ -5,7 +5,7 @@ with(this){return _c('div',{attrs:{"id":"app"}},[_c('header',{attrs:{"sticky":""
 };
     var pageVueStaticRenderFns = [function anonymous(
 ) {
-with(this){return _c('div',{attrs:{"id":"content-wrapper"}},[_c('h1',{attrs:{"id":"configuration-guide"}},[_v("Configuration guide"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#configuration-guide","onclick":"event.stopPropagation()"}})]),_v(" "),_c('p',[_v("Certain properties of the application can be controlled (e.g user preferences file location, logging level) through the configuration file (default: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("config.json")]),_v(").")])])}
+with(this){return _c('div',{attrs:{"id":"content-wrapper"}},[_c('h1',{attrs:{"id":"lekang"}},[_v("Lekang"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#lekang","onclick":"event.stopPropagation()"}})]),_v(" "),_c('p',[_v("hello!")])])}
 },function anonymous(
 ) {
 with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Fri, 2 May 2025, 22:11:03 GMT+8]")])])])}

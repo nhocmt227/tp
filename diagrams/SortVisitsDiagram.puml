@@ -1,0 +1,20 @@
+@startuml
+actor User
+
+participant "UI" as UI
+participant "LogicManager" as Logic
+participant "SortVisitsCommand" as Command
+participant "Model" as Model
+participant "FilteredList<Visit>" as FilteredList
+
+User -> UI: types "sortvisits desc/"
+UI -> Logic: execute("sortvisits desc/")
+Logic -> Command: new SortVisitsCommand(true)
+Command -> Model: sortFilteredVisitList(comparator)
+Model -> FilteredList: setPredicate(sortedList::contains)
+activate FilteredList
+FilteredList -> UI: notifies update
+deactivate FilteredList
+Command --> Logic: CommandResult("Sorted visits by date and time (descending).")
+Logic -> UI: displays result
+@enduml
